@@ -1,2 +1,4 @@
-# tarea1_pds
-hola
+# Tarea 1
+## Integrantes:
+- Esteban Becerra
+- Javiera Cortés
