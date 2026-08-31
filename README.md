@@ -4,16 +4,16 @@
 - Javiera Cortés
 
 
-##-Instalar:
+## Instalar:
 pip install virtualenv
 
-##-Crear el env:
+## Crear el env:
 virtualenv env
 
-##-Activar el env:
+## Activar el env:
 Windows: .\env\Scripts\activate
 Mac/Linux: source venv/bin/activate
 
-##-Instalar librerias dentro del env:
+## Instalar librerias dentro del env:
 pip install [libreria]
 pip install -r requirements.txt
