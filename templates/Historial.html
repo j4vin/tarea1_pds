@@ -1,5 +1,101 @@
 {% extends 'usuario_base.html' %}
 
 {% block contenido_usuario %}
-    <h1>HOLA, soy Historial</h1>
+    <h2>Mi Historial de Solicitudes</h2>
+
+    <table border="1" style="width: 100%; border-collapse: collapse; font-size: 0.85em; text-align: left;">
+        <thead style="background-color: #f2f2f2;">
+            <tr>
+                <th>ID</th>
+                <th>Solicitado el</th>
+                <th>Equipos</th>
+                <th>Motivo Solicitud</th>
+                <th>Estado</th>
+                <th>Entrega Real</th>
+                <th>Dev. Esperada</th>
+                <th>Dev. Real</th>
+                <th>Aprobador</th>
+                <th>Motivo Rechazo/Canc.</th>
+                <th>Cancelado por (Fecha)</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sol in solicitudes %}
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <!-- ID -->
+                    <td><strong>#{{ sol.id }}</strong></td>
+                    
+                    <!-- Fecha Solicitud -->
+                    <td>{{ sol.fecha_solicitud }}</td>
+                    
+                    <!-- Lista de Equipos -->
+                    <td>
+                        <ul style="padding-left: 15px; margin: 0;">
+                            {% for item in sol.solicitud_equipos %}
+                                <li>{{ item.equipo.nombre }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    
+                    <!-- Motivo de Solicitud (Usuario) -->
+                    <td><small>{{ sol.motivo_solicitud or '-' }}</small></td>
+                    
+                    <!-- Estado -->
+                    <td style="font-weight: bold; color: 
+                        {% if sol.estado.lower() == 'atrasado' %}red
+                        {% elif sol.estado.lower() == 'pendiente' %}orange
+                        {% elif sol.estado.lower() == 'aprobado' %}green
+                        {% else %}black{% endif %};">
+                        {{ sol.estado | upper }}
+                    </td>
+                    
+                    <!-- Fecha Entrega -->
+                    <td>{{ sol.fecha_entrega or '-' }}</td>
+                    
+                    <!-- Fecha Devolución Esperada -->
+                    <td>{{ sol.fecha_devolucion_esperada or '-' }}</td>
+                    
+                    <!-- Fecha Devolución Real -->
+                    <td>{{ sol.fecha_devolucion or '-' }}</td>
+                    
+                    <!-- Aprobador -->
+                    <td>{{ sol.aprobador.nombre if sol.aprobador else '-' }}</td>
+                    
+                    <!-- Motivo de Rechazo o Cancelación -->
+                    <td><small>{{ sol.motivo_rechazo_cancelacion or '-' }}</small></td>
+                    
+                    <!-- Cancelador y Fecha -->
+                    <td>
+                        {% if sol.cancelado %}
+                            {{ sol.cancelador.nombre if sol.cancelador else 'Sistema' }}
+                            <br><small>({{ sol.fecha_cancelacion }})</small>
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+
+                    <!-- Botón de Cancelar -->
+                    <td>
+                        {% if sol.estado.lower() in ['pendiente', 'aprobado', 'en posesion'] %}
+                            <form action="{{ url_for('lector.cancelar', id=sol.id) }}" method="POST" style="display: flex; flex-direction: column; gap: 4px;">
+                                <input type="text" name="motivo_cancelacion" placeholder="Escriba motivo..." required style="font-size: 0.9em; width: 120px;">
+                                <button type="submit" 
+                                        onclick="return confirm('¿Seguro que desea cancelar la solicitud #{{ sol.id }}?')" 
+                                        style="background-color: #d9534f; color: white; border: none; border-radius: 3px; cursor: pointer; padding: 4px;">
+                                    Confirmar
+                                </button>
+                            </form>
+                        {% else %}
+                            <span style="color: #999;">N/A</span>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="12" style="text-align: center; padding: 20px;">No tienes solicitudes en tu historial.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

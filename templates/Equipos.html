@@ -1,5 +1,37 @@
 {% extends 'usuario_base.html' %}
 
 {% block contenido_usuario %}
-    <h1>HOLA, soy Equipos</h1>
+    <h2>Mis Equipos en Posesión</h2>
+    <p>Aquí verás los equipos que tienes actualmente y su fecha de devolución.</p>
+
+    <table border="1" style="width: 100%; border-collapse: collapse; text-align: left;">
+        <thead style="background-color: #f2f2f2;">
+            <tr>
+                <th>Equipo</th>
+                <th>Fecha Límite de Devolución</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for equipo in equipos %}
+                <tr style="{% if equipo.atrasado %}background-color: #ffe6e6;{% endif %}">
+                    <td>{{ equipo.nombre }}</td>
+                    <td>{{ equipo.fecha_limite }}</td>
+                    <td>
+                        {% if equipo.atrasado %}
+                            <strong style="color: red;">¡ATRASADO!</strong>
+                        {% else %}
+                            <span style="color: green;">Al día</span>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3" style="text-align: center; padding: 20px;">
+                        No tienes equipos en tu posesión actualmente.
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

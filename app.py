@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
+from database.models import db
 from flask_login import LoginManager
 
 app = Flask(__name__)

@@ -2,9 +2,9 @@
 
 {% block body %}
     <nav>
-        <a href="{{ url_for('usuario.Equipos') }}">Mis Equipos</a> | 
-        <a href="{{ url_for('usuario.Solicitar') }}">Solicitar</a> | 
-        <a href="{{ url_for('usuario.Historial') }}">HISTORIAL DE SOLICITUDES</a>
+        <a href="{{ url_for('usuario.Equipos') }}" style="{% if request.endpoint == 'usuario.Equipos' %}font-weight: bold; color: blue;{% endif %}">Mis Equipos</a> | 
+        <a href="{{ url_for('usuario.Solicitar') }}" style="{% if request.endpoint == 'usuario.Solicitar' %}font-weight: bold; color: blue;{% endif %}">Solicitar</a> | 
+        <a href="{{ url_for('usuario.Historial') }}" style="{% if request.endpoint == 'usuario.Historial' %}font-weight: bold; color: blue;{% endif %}">HISTORIAL DE SOLICITUDES</a>
     </nav>
     <hr>
 
