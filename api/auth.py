@@ -1,7 +1,7 @@
 import re
 from flask import Blueprint, request, jsonify
 
-auth_bp = Blueprint('auth', __name__)
+api_auth_bp = Blueprint('api_auth', __name__)
 
 def es_formato_valido(correo):
     patron = r"^[a-zA-Z0-9]+\.[a-zA-Z0-9]+@(profesor|alumno)\.usm\.cl$"
@@ -18,7 +18,7 @@ def extraer_datos_correo(correo):
         }
     return None
 
-@auth_bp.route('/api/validar_correo', methods=['POST'])
+@api_auth_bp.route('/api/validar_correo', methods=['POST'])
 def validar_correo():
     datos = request.get_json()
     correo = datos.get('correo', '')

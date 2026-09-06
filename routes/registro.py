@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request
 from werkzeug.security import generate_password_hash
-from models import db, Usuario 
+from database.models import db, Usuario 
 from api.auth import es_formato_valido, extraer_datos_correo
 
 registro_bp = Blueprint('registro', __name__)
