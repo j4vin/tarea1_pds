@@ -47,11 +47,12 @@ pip install -r requirements.txt
 ### routes/
 
 - registro.py: Procesa la creación de cuentas, valida los datos y guarda los nuevos usuarios en la base de datos.
+- auth.py: Procesa el login del usuario y le da las credenciales.
+- logic_auth.py: Aqui van funciones que asisten a auth.py.
 
-### models.py
+### database/
 
-- Define los modelos `Usuario`, `Equipo`, `Solicitud` y `SolicitudEquipo`.
-- Configura las relaciones entre usuarios, equipos y solicitudes.
+- models.py: Define los modelos `Usuario`, `Equipo`, `Solicitud` y `SolicitudEquipo` y configura las relaciones entre usuarios, equipos y solicitudes.
 
 ### instance/
 
@@ -65,8 +66,6 @@ pip install -r requirements.txt
 
 - base.html: Plantilla principal que define la estructura básica del HTML y conecta la hoja de estilos.
 - index.html: Vista inicial sencilla que hereda de base.html.
+- login.html: Formulario de login con validación con la base de datos y link a registro para creacion de cuenta.
 - registro.html: Formulario de registro con validación interactiva del correo y de las contraseñas.
 
-### templates/
-- base.html: Plantilla principal que armaba la estructura básica del HTML (el head y el body) y conecta la hoja de estilos.
-- index.html: Vista inicial sencilla que hereda de base.html.
