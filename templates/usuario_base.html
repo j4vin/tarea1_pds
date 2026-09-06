@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <nav>
+        <a href="{{ url_for('usuario.Equipos') }}">Mis Equipos</a> | 
+        <a href="{{ url_for('usuario.Solicitar') }}">Solicitar</a> | 
+        <a href="{{ url_for('usuario.Historial') }}">HISTORIAL DE SOLICITUDES</a>
+    </nav>
+    <hr>
+
+    <main>
+        {% block contenido_usuario %}{% endblock %}
+    </main>
+{% endblock %}
