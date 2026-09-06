@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<h1>Crear Cuenta</h1>
+
+<form id="registroForm" method="POST" action="/registro">
+    <div>
+        <label for="correo">Correo Institucional:</label><br>
+        <input type="text" id="correo" name="correo" required>
+        <div id="correoFeedback" style="display: none;">Debes ingresar un correo institucional válido (ej: Juan.Perez@alumno.usm.cl o Juan.Perez@profesor.usm.cl)</div>
+    </div>
+    
+    <div>
+        <label for="contraseña">Contraseña:</label><br>
+        <input type="password" id="contraseña" name="contraseña" required>
+    </div>
+    
+    <div>
+        <label for="confirmar_contraseña">Confirmar Contraseña:</label><br>
+        <input type="password" id="confirmar_contraseña" name="confirmar_contraseña" required>
+        <div id="passFeedback" style="display: none;">Las contraseñas no coinciden.</div>
+    </div>
+
+    <button type="submit" id="btnSubmit" disabled>Registrarse</button>
+</form>
+
+<script>
+    const inputCorreo = document.getElementById('correo');
+    const correoFeedback = document.getElementById('correoFeedback');
+    const inputPass = document.getElementById('contraseña');
+    const inputConfirmPass = document.getElementById('confirmar_contraseña');
+    const passFeedback = document.getElementById('passFeedback');
+    const btnSubmit = document.getElementById('btnSubmit');
+
+    let correoValido = false;
+    let passValida = false;
+
+    inputCorreo.addEventListener('input', function() {
+        const correo = this.value;
+        
+        if (correo.length === 0) {
+            correoFeedback.style.display = 'none';
+            correoValido = false;
+            verificarBoton();
+            return;
+        }
+
+        fetch('/api/validar_correo', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ correo: correo })
+        })
+        .then(response => response.json())
+        .then(data => {
+            correoValido = data.valido;
+            if (data.valido) {
+                correoFeedback.style.display = 'none';
+            } else {
+                correoFeedback.style.display = 'block';
+            }
+            verificarBoton();
+        });
+    });
+
+    function chequearContraseñas() {
+        const pass1 = inputPass.value;
+        const pass2 = inputConfirmPass.value;
+
+        if (pass2.length === 0) {
+            passFeedback.style.display = 'none';
+            passValida = false;
+        } else if (pass1 === pass2) {
+            passFeedback.style.display = 'none';
+            passValida = true;
+        } else {
+            passFeedback.style.display = 'block';
+            passValida = false;
+        }
+        verificarBoton();
+    }
+
+    inputPass.addEventListener('input', chequearContraseñas);
+    inputConfirmPass.addEventListener('input', chequearContraseñas);
+
+    function verificarBoton() {
+        if (correoValido && passValida) {
+            btnSubmit.disabled = false;
+        } else {
+            btnSubmit.disabled = true;
+        }
+    }
+</script>
+{% endblock %}
