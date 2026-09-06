@@ -122,6 +122,11 @@ class Solicitud(db.Model):
         nullable=True
     )
 
+    motivo_solicitud = db.Column(
+            db.String(255),
+            nullable=True
+        )
+
     # Usuario que cancela
     cancelador_id = db.Column(
         db.Integer,

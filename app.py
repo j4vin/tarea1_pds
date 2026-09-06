@@ -1,7 +1,5 @@
 from flask import Flask, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
-from datetime import date
-from database.models import db, Usuario, Equipo, Solicitud, SolicitudEquipo
 from flask_login import LoginManager
 
 app = Flask(__name__)
@@ -17,6 +15,7 @@ with app.app_context():
 from api.auth import api_auth_bp
 from routes.registro import registro_bp
 from routes.auth import auth_bp
+from routes.usuario import usuario_bp
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Logica del login
@@ -33,6 +32,7 @@ def load_user(user_id):
 app.register_blueprint(api_auth_bp)
 app.register_blueprint(registro_bp)
 app.register_blueprint(auth_bp)
+app.register_blueprint(usuario_bp)
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
