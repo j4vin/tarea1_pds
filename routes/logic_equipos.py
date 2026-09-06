@@ -1,5 +1,4 @@
 from database.models import Solicitud
-from datetime import date
 
 def obtener_equipos_en_posesion(user_id):
     solicitudes = Solicitud.query.filter(
@@ -7,7 +6,6 @@ def obtener_equipos_en_posesion(user_id):
         Solicitud.estado.in_(['en posesion', 'atrasado'])
     ).all()
     
-    hoy = date.today()
     resultado = []
 
     for sol in solicitudes:
