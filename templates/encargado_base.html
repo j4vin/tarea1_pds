@@ -4,7 +4,7 @@
     <h1>PANEL DE ENCARGADO</h1>
     <nav>
         <a href="{{ url_for('encargado.pendientes') }}" style="{% if 'encargado' in request.endpoint %}font-weight: bold; color: #007bff;{% endif %}"> SOLICITUDES</a> | 
-        <a href="#"style="{% if 'equipos' in request.endpoint %}font-weight: bold; color: #007bff;{% endif %}"> EQUIPOS</a>
+        <a href="{{ url_for('encargado.administrar_equipos') }}"style="{% if 'equipos' in request.endpoint %}font-weight: bold; color: #007bff;{% endif %}"> EQUIPOS</a>
     </nav>
     <hr>
     {% block contenido_encargado %}{% endblock %}
