@@ -1,5 +1,5 @@
 import re
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, current_app, request, jsonify
 
 api_auth_bp = Blueprint('api_auth', __name__)
 
@@ -20,8 +20,11 @@ def extraer_datos_correo(correo):
 
 @api_auth_bp.route('/api/validar_correo', methods=['POST'])
 def validar_correo():
-    datos = request.get_json()
+    datos = request.get_json(silent=True) or {}
     correo = datos.get('correo', '')
-    
+
+    if not correo:
+        current_app.logger.warning("email_validation_missing_email")
+
     # Solo devolvemos True o False para no gastar recursos
     return jsonify({"valido": es_formato_valido(correo)})

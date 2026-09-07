@@ -1,12 +1,17 @@
-from flask import Flask, render_template, url_for
+import os
+
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from datetime import date
 from database.models import db, Usuario, Equipo, Solicitud, SolicitudEquipo
-from flask_login import LoginManager
+from flask_login import LoginManager, login_required
+from observability import configure_observability
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Tarea1.db'
-app.config['SECRET_KEY'] = 'Esta_Es_Una_Clave_HEHEHE_CAMBIABLE_BTW'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'clave-solo-para-desarrollo')
+
+configure_observability(app)
 
 db.init_app(app)
 
@@ -39,8 +44,9 @@ app.register_blueprint(auth_bp)
 
 
 @app.route('/')
+@login_required
 def index():
-    return render_template(url_for('auth.login'))
+    return render_template('index.html')
 
 
 if __name__ == "__main__":
