@@ -8,6 +8,7 @@
                 <th>ID</th>
                 <th>ID Inv</th>
                 <th>Nombre</th>
+                <th>Fecha Registro</th>
                 <th>Tiempos (Min/Max)</th>
                 <th>Estado</th>
                 <th>Último Motivo</th>
@@ -20,6 +21,7 @@
                 <td>{{ eq.id }}</td>
                 <td>{{ eq.id_inv }}</td>
                 <td>{{ eq.nombre }}</td>
+                <td>{{ eq.fecha_registro }}</td>
                 <td>{{ eq.tiempo_min }} / {{ eq.tiempo_max }} días</td>
                 <td style="font-weight: bold; color: {{ 'green' if eq.disponible else 'red' }};">
                     {{ 'DISPONIBLE' if eq.disponible else 'NO DISPONIBLE' }}

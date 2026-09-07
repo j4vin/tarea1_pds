@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template
+from flask import Flask, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import date
 from database.models import db, Usuario, Equipo, Solicitud, SolicitudEquipo
@@ -50,7 +50,7 @@ app.register_blueprint(encargado_bp)
 @app.route('/')
 @login_required
 def index():
-    return render_template('index.html')
+    return redirect(url_for('usuario.equipos'))
 
 
 if __name__ == "__main__":

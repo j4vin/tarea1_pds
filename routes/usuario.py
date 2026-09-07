@@ -26,7 +26,7 @@ def solicitar():
             "loan_request_access_denied user_id=%s reason=blocked_user",
             current_user.id,
         )
-        return render_template('solicitar.html', bloqueado=True)
+        return render_template('Solicitar.html', bloqueado=True)
 
     hoy = date.today()
     
@@ -40,13 +40,13 @@ def solicitar():
             current_user.id,
             limite_base,
         )
-        return render_template('solicitar.html', cupo_excedido=True, limite=limite_base)
+        return render_template('Solicitar.html', cupo_excedido=True, limite=limite_base)
 
     ### PASO 1: Selección de fechas
     if request.method == 'GET' and not request.args.get('fecha_inicio'):
         fecha_min = hoy + timedelta(days=1)
         fecha_max = hoy + timedelta(days=7)
-        return render_template('solicitar.html', paso=1, fecha_min=fecha_min, fecha_max=fecha_max)
+        return render_template('Solicitar.html', paso=1, fecha_min=fecha_min, fecha_max=fecha_max)
 
     ### PASO 2: Mostrar equipos
     if request.method == 'GET' and request.args.get('fecha_inicio'):
@@ -59,7 +59,7 @@ def solicitar():
             current_user.id,
             len(equipos),
         )
-        return render_template('solicitar.html', paso=2, equipos=equipos, f_ini=f_ini, f_fin=f_fin, max_equipos=cupo_disponible)
+        return render_template('Solicitar.html', paso=2, equipos=equipos, f_ini=f_ini, f_fin=f_fin, max_equipos=cupo_disponible)
 
 
     ### PASO 3: Guardar 
