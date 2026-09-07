@@ -77,7 +77,7 @@
 
                     <!-- Botón de Cancelar -->
                     <td>
-                        {% if sol.estado.lower() in ['pendiente', 'aprobado', 'en posesion'] %}
+                        {% if sol.estado.lower() in ['pendiente', 'aprobado'] %}
                             <form action="{{ url_for('usuario.cancelar', id=sol.id) }}" method="POST" style="display: flex; flex-direction: column; gap: 4px;">
                                 <input type="text" name="motivo_cancelacion" placeholder="Escriba motivo..." required style="font-size: 0.9em; width: 120px;">
                                 <button type="submit" 

@@ -30,7 +30,7 @@ def solicitar():
 
     hoy = date.today()
     
-    limite_base = 10 if current_user.profesor else 3
+    limite_base = 20 if current_user.profesor else 3
     equipos_ya_poseidos = contar_equipos_activos_usuario(current_user.id)
     cupo_disponible = limite_base - equipos_ya_poseidos
 
@@ -106,4 +106,4 @@ def cancelar(id):
             id,
             current_user.id,
         )
-    return redirect(url_for('lector.historial'))
+    return redirect(url_for('usuario.historial'))
