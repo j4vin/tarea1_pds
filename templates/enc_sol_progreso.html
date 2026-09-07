@@ -1,0 +1,45 @@
+{% extends 'encargado_solicitudes.html' %}
+
+{% block tabla_solicitudes %}
+    <h3>⏳ Solicitudes en Progreso (Préstamos)</h3>
+    <table border="1" style="width: 100%; border-collapse: collapse;">
+        <thead style="background: #eee;">
+            <tr>
+                <th>ID</th>
+                <th>Solicitante</th>
+                <th>Equipos</th>
+                <th>Estado</th>
+                <th>Dev. Esperada</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sol in solicitudes %}
+            <tr {% if sol.estado == 'atrasado' %}style="background: #ffcccc;"{% endif %}>
+                <td>#{{ sol.id }}</td>
+                <td>{{ sol.solicitante.nombre }}</td>
+                <td>
+                    {% for item in sol.solicitud_equipos %}
+                        • {{ item.equipo.nombre }}<br>
+                    {% endfor %}
+                </td>
+                <td><strong>{{ sol.estado | upper }}</strong></td>
+                <td>{{ sol.fecha_devolucion_esperada }}</td>
+                <td>
+                    {% if sol.estado == 'aprobado' %}
+                        <form action="{{ url_for('encargado.procesar', id=sol.id, estado='en posesion') }}" method="POST">
+                            <button type="submit" style="background: blue; color: white;">Marcar ENTREGADO</button>
+                        </form>
+                    {% elif sol.estado in ['en posesion', 'atrasado'] %}
+                        <form action="{{ url_for('encargado.procesar', id=sol.id, estado='restituido') }}" method="POST">
+                            <button type="submit" style="background: orange;">Marcar DEVUELTO</button>
+                        </form>
+                    {% endif %}
+                </td>
+            </tr>
+            {% else %}
+            <tr><td colspan="6" style="text-align:center;">No hay préstamos activos.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

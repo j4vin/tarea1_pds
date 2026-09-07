@@ -1,0 +1,18 @@
+{% extends 'encargado_base.html' %}
+
+{% block contenido_encargado %}
+    <nav style="background: #eee; padding: 10px; border-radius: 5px;">
+        <a href="{{ url_for('encargado.administrar_equipos') }}" 
+           style="{% if request.endpoint == 'encargado.administrar_equipos' %}font-weight: bold; color: blue;{% endif %}">
+           Administrar Equipos
+        </a> | 
+        <a href="{{ url_for('encargado.registrar_equipo') }}" 
+           style="{% if request.endpoint == 'encargado.registrar_equipo' %}font-weight: bold; color: blue;{% endif %}">
+           Registrar Equipos
+        </a>
+    </nav>
+
+    <div style="margin-top: 20px;">
+        {% block contenido_equipos %}{% endblock %}
+    </div>
+{% endblock %}

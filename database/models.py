@@ -18,7 +18,7 @@ class Usuario(UserMixin, db.Model):
 
     condicion_bloqueo = db.Column(db.Integer, default=0, nullable=False)
 
-    # Relaciones
+    ### Relaciones
     equipos_registrados = db.relationship(
         "Equipo",
         foreign_keys="Equipo.usuario_registro_id",
@@ -64,14 +64,14 @@ class Equipo(db.Model):
     motivo = db.Column(db.String(255), nullable=True)
     fecha_registro = db.Column(db.Date, default=date.today, nullable=False)
 
-    # Usuario que registró el equipo
+    ### Usuario que registró el equipo
     usuario_registro_id = db.Column(
         db.Integer,
         db.ForeignKey("usuario.id"),
         nullable=False
     )
 
-    # Usuario que cambió manualmente la disponibilidad
+    ### Usuario que cambió manualmente la disponibilidad
     usuario_disponibilidad_id = db.Column(
         db.Integer,
         db.ForeignKey("usuario.id"),
@@ -84,14 +84,14 @@ class Solicitud(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
 
-    # Usuario que realiza la solicitud
+    ### Usuario que realiza la solicitud
     solicitante_id = db.Column(
         db.Integer,
         db.ForeignKey("usuario.id"),
         nullable=False
     )
 
-    # Usuario que aprueba/rechaza
+    ### Usuario que aprueba/rechaza
     aprobador_id = db.Column(
         db.Integer,
         db.ForeignKey("usuario.id"),
@@ -123,6 +123,11 @@ class Solicitud(db.Model):
         nullable=True
     )
 
+    motivo_solicitud = db.Column(
+            db.String(255),
+            nullable=True
+        )
+
     # Usuario que cancela
     cancelador_id = db.Column(
         db.Integer,
@@ -131,6 +136,11 @@ class Solicitud(db.Model):
     )
 
     notificado = db.Column(db.Boolean, default=False, nullable=False)
+
+    ### Relaciones
+    solicitud_equipos = db.relationship(
+        "SolicitudEquipo",
+        backref="solicitud")
 
 
 class SolicitudEquipo(db.Model):
@@ -153,3 +163,8 @@ class SolicitudEquipo(db.Model):
         db.ForeignKey("equipo.id"),
         primary_key=True
     )
+
+    ### Relaciones
+    equipo = db.relationship(
+        "Equipo",
+        backref="solicitud_equipo_vinculo")

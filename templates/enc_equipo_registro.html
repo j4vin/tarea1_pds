@@ -1,0 +1,17 @@
+{% extends 'encargado_equipos.html' %}
+
+{% block contenido_equipos %}
+    <h3>Registrar Nuevo Equipo</h3>
+    <form method="POST">
+        <label>Nombre del Equipo:</label><br>
+        <input type="text" name="nombre" required><br><br>
+        
+        <label>Tiempo Mínimo de préstamo (días):</label><br>
+        <input type="number" name="t_min" min="1" required><br><br>
+        
+        <label>Tiempo Máximo de préstamo (días):</label><br>
+        <input type="number" name="t_max" min="1" required><br><br>
+        
+        <button type="submit" style="background: green; color: white; padding: 10px;">Guardar Equipo</button>
+    </form>
+{% endblock %}

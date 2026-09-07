@@ -1,0 +1,42 @@
+{% extends 'encargado_solicitudes.html' %}
+
+{% block tabla_solicitudes %}
+    <h3>✅ Historial Finalizado</h3>
+    <table border="1" style="width: 100%; border-collapse: collapse;">
+        <thead style="background: #eee;">
+            <tr>
+                <th>ID</th>
+                <th>Solicitante</th>
+                <th>Equipos</th>
+                <th>Estado</th>
+                <th>Fecha Cierre</th>
+                <th>Notas</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sol in solicitudes %}
+            <tr>
+                <td>#{{ sol.id }}</td>
+                <td>{{ sol.solicitante.nombre }}</td>
+                <td>
+                    {% for item in sol.solicitud_equipos %}
+                        • {{ item.equipo.nombre }}<br>
+                    {% endfor %}
+                </td>
+                <td>{{ sol.estado | upper }}</td>
+                <td>
+                    {% if sol.estado == 'restituido' %}{{ sol.fecha_devolucion }}
+                    {% elif sol.estado == 'cancelado' %}{{ sol.fecha_cancelacion }}
+                    {% elif sol.estado == 'rechazado' %}{{ sol.fecha_solicitud }}
+                    {% endif %}
+                </td>
+                <td>
+                    <small>{{ sol.motivo_rechazo_cancelacion or '-' }}</small>
+                </td>
+            </tr>
+            {% else %}
+            <tr><td colspan="6" style="text-align:center;">Historial vacío.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

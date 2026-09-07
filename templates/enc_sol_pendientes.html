@@ -1,0 +1,44 @@
+{% extends 'encargado_solicitudes.html' %}
+
+{% block tabla_solicitudes %}
+    <h3>📥 Solicitudes Pendientes de Respuesta</h3>
+    <table border="1" style="width: 100%; border-collapse: collapse;">
+        <thead style="background: #eee;">
+            <tr>
+                <th>ID</th>
+                <th>Solicitante</th>
+                <th>Equipos</th>
+                <th>Días</th>
+                <th>Motivo Usuario</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sol in solicitudes %}
+            <tr>
+                <td>#{{ sol.id }}</td>
+                <td>{{ sol.solicitante.nombre }}</td>
+                <td>
+                    {% for item in sol.solicitud_equipos %}
+                        • {{ item.equipo.nombre }}<br>
+                    {% endfor %}
+                </td>
+                <td>{{ sol.dias_solicitado }}</td>
+                <td><small>{{ sol.motivo_solicitud }}</small></td>
+                <td>
+                    <form action="{{ url_for('encargado.procesar', id=sol.id, estado='aprobado') }}" method="POST" style="display:inline;">
+                        <button type="submit" style="background: green; color: white;">Aprobar</button>
+                    </form>
+                    <hr>
+                    <form action="{{ url_for('encargado.procesar', id=sol.id, estado='rechazado') }}" method="POST">
+                        <input type="text" name="motivo" placeholder="Motivo rechazo" required style="width: 100px;">
+                        <button type="submit" style="background: red; color: white;">Rechazar</button>
+                    </form>
+                </td>
+            </tr>
+            {% else %}
+            <tr><td colspan="6" style="text-align:center;">No hay pendientes.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
