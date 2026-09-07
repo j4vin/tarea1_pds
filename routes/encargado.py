@@ -3,10 +3,10 @@ from flask_login import current_user, login_required
 
 
 
-from utils import encargado_required
+from .utils import encargado_required
 from database.models import Solicitud, Equipo
-from logic_encargado_solicitudes import gestionar_solicitud, obtener_solicitudes_progreso_ordenadas
-from logic_enc_equipos import registrar_nuevo_equipo, modificar_disponibilidad
+from .logic_encargado_solicitudes import gestionar_solicitud, obtener_solicitudes_progreso_ordenadas
+from .logic_enc_equipos import registrar_nuevo_equipo, modificar_disponibilidad
 
 
 encargado_bp = Blueprint('encargado', __name__, url_prefix='/Encargado')
