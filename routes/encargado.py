@@ -63,6 +63,7 @@ def registrar_equipo():
             request.form.get('nombre'),
             request.form.get('t_min'),
             request.form.get('t_max'),
+            request.form.get('id_inv'),
             current_user.id
         )
         return redirect(url_for('encargado.administrar_equipos'))

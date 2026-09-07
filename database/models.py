@@ -54,6 +54,7 @@ class Equipo(db.Model):
     __tablename__ = "equipo"
 
     id = db.Column(db.Integer, primary_key=True)
+    id_inv = db.Column(db.Integer, unique=True, nullable=False)
     nombre = db.Column(db.String(100), nullable=False)
 
     tiempo_max = db.Column(db.Integer, nullable=False)

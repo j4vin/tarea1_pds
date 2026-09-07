@@ -1,9 +1,10 @@
 from flask import current_app
 from database.models import db, Equipo
 
-def registrar_nuevo_equipo(nombre, t_min, t_max, user_id):
+def registrar_nuevo_equipo(nombre, t_min, t_max, id_inv, user_id):
     nuevo = Equipo(
         nombre=nombre,
+        id_inv=int(id_inv),
         tiempo_min=int(t_min),
         tiempo_max=int(t_max),
         usuario_registro_id=user_id,
