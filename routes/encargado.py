@@ -66,7 +66,7 @@ def registrar_equipo():
             current_user.id
         )
         return redirect(url_for('encargado.administrar_equipos'))
-    return render_template('enc_equipo_registrar.html')
+    return render_template('enc_equipo_registro.html')
 
 
 @encargado_bp.route('/equipos/cambiar_estado/<int:id>', methods=['POST'])
