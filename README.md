@@ -1,9 +1,17 @@
 # Tarea 1
-## Integrantes:
+## Integrantes y autores:
 - Esteban Becerra
 - Javiera Cortés
 - Beatriz Vázquez
 
+## Descripción:
+Sistema con interfaz web sencilla, para la gestión de solicitudes de equipos de un laboratorio.
+
+## Tecnologías:
+Se usa python con Flask para la interfaz web y SQLite para la BD.
+
+
+## Instalacion y ejecucion:
 ## Instalar:
 pip install virtualenv
 
