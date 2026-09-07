@@ -13,7 +13,7 @@
         {# Solo el encargado ve estos links #}
         {% if current_user.encargado %}
             <strong>Panel de Control:</strong>
-            <a href="{{ url_for('lector.mis_libros') }}" style="color: #add8e6;">Modo USUARIO</a> | 
+            <a href="{{ url_for('usuario.equipos') }}" style="color: #add8e6;">Modo USUARIO</a> | 
             <a href="{{ url_for('encargado.pendientes') }}" style="color: #ffb6c1;">Modo ENCARGADO</a> |
         {% endif %}
 
