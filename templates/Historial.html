@@ -78,7 +78,7 @@
                     <!-- Botón de Cancelar -->
                     <td>
                         {% if sol.estado.lower() in ['pendiente', 'aprobado', 'en posesion'] %}
-                            <form action="{{ url_for('lector.cancelar', id=sol.id) }}" method="POST" style="display: flex; flex-direction: column; gap: 4px;">
+                            <form action="{{ url_for('usuario.cancelar', id=sol.id) }}" method="POST" style="display: flex; flex-direction: column; gap: 4px;">
                                 <input type="text" name="motivo_cancelacion" placeholder="Escriba motivo..." required style="font-size: 0.9em; width: 120px;">
                                 <button type="submit" 
                                         onclick="return confirm('¿Seguro que desea cancelar la solicitud #{{ sol.id }}?')" 
