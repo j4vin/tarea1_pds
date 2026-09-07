@@ -1,0 +1,11 @@
+{% extends 'encargado_base.html' %}
+
+{% block contenido_encargado %}
+    <nav style="background: #eee; padding: 5px;">
+        <a href="{{ url_for('encargado.pendientes') }}"style="{% if request.endpoint == 'encargado.pendientes' %}font-weight: bold; color: #28a745;{% endif %}"> Pendientes de Respuesta</a> | 
+        <a href="{{ url_for('encargado.en_progreso') }}"style="{% if request.endpoint == 'encargado.en_progreso' %}font-weight: bold; color: #28a745;{% endif %}"> En Progreso</a> | 
+        <a href="{{ url_for('encargado.historial_admin') }}"style="{% if request.endpoint == 'encargado.historial_admin' %}font-weight: bold; color: #28a745;{% endif %}"> Historial Finalizado</a>
+    </nav>
+{% block tabla_solicitudes %}{% endblock %}
+    </div>
+{% endblock %}

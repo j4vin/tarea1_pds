@@ -1,0 +1,753 @@
+2026-09-06 23:56:03,746 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-06 23:59:53,588 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 00:03:36,080 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 00:03:36,169 INFO werkzeug WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-07 00:03:36,169 INFO werkzeug Press CTRL+C to quit
+2026-09-07 00:03:36,171 INFO werkzeug  * Restarting with stat
+2026-09-07 00:03:37,130 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 00:03:37,183 WARNING werkzeug  * Debugger is active!
+2026-09-07 00:03:37,190 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 00:05:30,863 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 00:05:30,929 INFO werkzeug WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-07 00:05:30,929 INFO werkzeug Press CTRL+C to quit
+2026-09-07 00:05:30,930 INFO werkzeug  * Restarting with stat
+2026-09-07 00:05:31,756 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 00:05:31,802 WARNING werkzeug  * Debugger is active!
+2026-09-07 00:05:31,807 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 00:21:20,440 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 00:21:20,486 ERROR app Exception on /sentry-test [GET]
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\Desktop\Cosas U\Semestre 14\Pruebas de Software\Tarea_1\tarea1_pds\env\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Lenovo\Desktop\Cosas U\Semestre 14\Pruebas de Software\Tarea_1\tarea1_pds\env\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Lenovo\Desktop\Cosas U\Semestre 14\Pruebas de Software\Tarea_1\tarea1_pds\env\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Lenovo\Desktop\Cosas U\Semestre 14\Pruebas de Software\Tarea_1\tarea1_pds\env\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "<string>", line 1, in <lambda>
+    import sentry_sdk; from app import app; app.add_url_rule('/sentry-test', 'sentry_test', lambda: 1/0); respuesta=app.test_client().get('/sentry-test'); sentry_sdk.flush(timeout=10); print('Estado HTTP:', respuesta.status_code)
+                                                                                                    ~^~
+ZeroDivisionError: division by zero
+2026-09-07 00:32:50,469 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 00:33:51,374 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 00:33:51,470 INFO werkzeug WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-07 00:33:51,471 INFO werkzeug Press CTRL+C to quit
+2026-09-07 00:33:51,473 INFO werkzeug  * Restarting with stat
+2026-09-07 00:33:52,316 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 00:33:52,366 WARNING werkzeug  * Debugger is active!
+2026-09-07 00:33:52,372 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 00:34:22,484 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:34:22] "GET / HTTP/1.1" 302 -
+2026-09-07 00:34:22,783 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:34:22] "GET /login?next=/ HTTP/1.1" 200 -
+2026-09-07 00:34:23,027 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:34:23] "GET /static/css/main.css HTTP/1.1" 200 -
+2026-09-07 00:34:23,396 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:34:23] "GET /favicon.ico HTTP/1.1" 404 -
+2026-09-07 00:37:48,917 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:37:48] "GET /registro HTTP/1.1" 200 -
+2026-09-07 00:37:49,153 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:37:49] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 00:37:55,833 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:37:55] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:37:56,226 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:37:56] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:37:56,288 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:37:56] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:37:58,510 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:37:58] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:00,374 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:00] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:00,475 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:00] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:00,554 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:00] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:00,631 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:00] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:00,992 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:00] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:01,451 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:01] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:01,700 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:01] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:01,738 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:01] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:02,281 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:02] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:02,409 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:02] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:02,520 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:02] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:02,747 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:02] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:03,232 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:03] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:03,459 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:03] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:03,839 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:03] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:04,432 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:04] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:04,543 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:04] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:04,699 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:04] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:04,840 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:04] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:05,308 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:05] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:05,355 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:05] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:19,061 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:19] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:20,758 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:20] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:20,866 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:20] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:20,945 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:20] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:38:22,385 INFO app user_registered user_id=1 role=alumno
+2026-09-07 00:38:22,386 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:22] "POST /registro HTTP/1.1" 200 -
+2026-09-07 00:38:29,726 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:29] "GET / HTTP/1.1" 302 -
+2026-09-07 00:38:29,981 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:29] "GET /login?next=/ HTTP/1.1" 200 -
+2026-09-07 00:38:30,114 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:30] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 00:38:35,146 INFO app user_login_succeeded user_id=1
+2026-09-07 00:38:35,147 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:35] "POST /login HTTP/1.1" 302 -
+2026-09-07 00:38:35,307 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:35] "GET / HTTP/1.1" 200 -
+2026-09-07 00:38:35,464 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:38:35] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 00:39:42,940 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:39:42] "GET /usuario HTTP/1.1" 404 -
+2026-09-07 00:40:49,527 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:40:49] "GET /registro HTTP/1.1" 200 -
+2026-09-07 00:40:49,779 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:40:49] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 00:40:53,862 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:40:53] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 00:40:57,451 WARNING app user_registration_rejected reason=duplicate_email
+2026-09-07 00:40:57,452 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:40:57] "POST /registro HTTP/1.1" 400 -
+2026-09-07 00:41:31,782 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:41:31] "GET /Solicitar HTTP/1.1" 404 -
+2026-09-07 00:42:25,717 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:42:25] "GET /Historial HTTP/1.1" 404 -
+2026-09-07 00:42:28,748 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:42:28] "GET / HTTP/1.1" 200 -
+2026-09-07 00:42:29,178 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:42:29] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 00:42:34,460 INFO app user_logout_succeeded user_id=1
+2026-09-07 00:42:34,461 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:42:34] "GET /logout HTTP/1.1" 302 -
+2026-09-07 00:42:34,784 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:42:34] "GET /login HTTP/1.1" 200 -
+2026-09-07 00:42:35,048 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:42:35] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 00:44:25,113 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\routes\\auth.py', reloading
+2026-09-07 00:44:25,282 INFO werkzeug  * Restarting with stat
+2026-09-07 00:44:26,554 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 00:44:26,620 WARNING werkzeug  * Debugger is active!
+2026-09-07 00:44:26,627 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 00:44:32,007 INFO app user_login_succeeded user_id=1
+2026-09-07 00:44:32,010 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:44:32] "POST /login HTTP/1.1" 302 -
+2026-09-07 00:44:32,222 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:44:32] "GET /Usuario/Equipos HTTP/1.1" 500 -
+2026-09-07 00:44:32,459 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:44:32] "GET /Usuario/Equipos?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-09-07 00:44:32,711 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:44:32] "GET /Usuario/Equipos?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-09-07 00:44:33,101 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:44:33] "GET /Usuario/Equipos?__debugger__=yes&cmd=resource&f=console.png&s=SOg23lgMV2VCE6D4DmdC HTTP/1.1" 200 -
+2026-09-07 00:44:33,362 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:44:33] "GET /Usuario/Equipos?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-09-07 00:46:37,234 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:46:37] "GET /Usuario/Equipos HTTP/1.1" 200 -
+2026-09-07 00:46:37,488 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:46:37] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 00:46:45,092 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:46:45] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 00:46:45,522 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:46:45] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 00:46:47,006 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:46:47] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 00:46:47,453 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:46:47] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 00:46:48,551 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:46:48] "GET /Usuario/Equipos HTTP/1.1" 200 -
+2026-09-07 00:46:48,980 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:46:48] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 00:47:51,842 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 00:47:51,920 INFO werkzeug WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-07 00:47:51,920 INFO werkzeug Press CTRL+C to quit
+2026-09-07 00:47:51,921 INFO werkzeug  * Restarting with stat
+2026-09-07 00:47:52,848 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 00:47:52,903 WARNING werkzeug  * Debugger is active!
+2026-09-07 00:47:52,909 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 00:47:55,697 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:47:55] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 00:47:55,965 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:47:55] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 00:49:13,942 INFO app user_logout_succeeded user_id=1
+2026-09-07 00:49:13,943 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:49:13] "GET /logout HTTP/1.1" 302 -
+2026-09-07 00:49:14,203 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:49:14] "GET /login HTTP/1.1" 200 -
+2026-09-07 00:49:14,363 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:49:14] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 00:49:17,750 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:49:17] "GET /registro HTTP/1.1" 200 -
+2026-09-07 00:49:17,997 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:49:17] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 00:50:38,287 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\routes\\usuario.py', reloading
+2026-09-07 00:50:38,392 INFO werkzeug  * Restarting with stat
+2026-09-07 00:50:39,314 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 00:50:39,371 WARNING werkzeug  * Debugger is active!
+2026-09-07 00:50:39,376 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 00:53:33,323 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 00:53:33,394 INFO werkzeug WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-07 00:53:33,395 INFO werkzeug Press CTRL+C to quit
+2026-09-07 00:53:33,397 INFO werkzeug  * Restarting with stat
+2026-09-07 00:53:34,311 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 00:53:34,363 WARNING werkzeug  * Debugger is active!
+2026-09-07 00:53:34,368 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 00:53:48,063 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:53:48] "GET / HTTP/1.1" 302 -
+2026-09-07 00:53:48,322 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:53:48] "GET /login?next=/ HTTP/1.1" 200 -
+2026-09-07 00:53:48,523 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:53:48] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 00:57:01,557 INFO app user_login_succeeded user_id=1
+2026-09-07 00:57:01,559 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:57:01] "POST /login HTTP/1.1" 302 -
+2026-09-07 00:57:01,748 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:57:01] "GET /Usuario/Equipos HTTP/1.1" 500 -
+2026-09-07 00:57:01,901 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:57:01] "GET /Usuario/Equipos?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 00:57:02,211 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:57:02] "GET /Usuario/Equipos?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 00:57:02,477 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:57:02] "GET /Usuario/Equipos?__debugger__=yes&cmd=resource&f=console.png&s=Wv8CHJFMvhetcYynwDyi HTTP/1.1" 200 -
+2026-09-07 00:57:02,571 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:57:02] "GET /Usuario/Equipos?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-09-07 00:58:23,140 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:58:23] "GET /Usuario HTTP/1.1" 404 -
+2026-09-07 00:58:27,271 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:58:27] "GET /Usuario/equipo HTTP/1.1" 404 -
+2026-09-07 00:58:32,155 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:58:32] "GET /Usuario/Equipo HTTP/1.1" 404 -
+2026-09-07 00:58:39,687 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:58:39] "GET /Usuario/solicitar HTTP/1.1" 404 -
+2026-09-07 00:59:33,420 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:59:33] "GET /encargado/pendientes HTTP/1.1" 404 -
+2026-09-07 00:59:37,136 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:59:37] "GET / HTTP/1.1" 500 -
+2026-09-07 00:59:37,598 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:59:37] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-09-07 00:59:37,598 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:59:37] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-09-07 00:59:37,850 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:59:37] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=Wv8CHJFMvhetcYynwDyi HTTP/1.1" 200 -
+2026-09-07 00:59:37,945 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 00:59:37] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-09-07 01:02:29,724 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:02:29,803 INFO werkzeug WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-07 01:02:29,803 INFO werkzeug Press CTRL+C to quit
+2026-09-07 01:02:29,804 INFO werkzeug  * Restarting with stat
+2026-09-07 01:02:30,872 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:02:30,939 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:02:30,946 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:02:31,027 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:02:31] "GET / HTTP/1.1" 200 -
+2026-09-07 01:02:31,250 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:02:31] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:02:36,151 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:02:36] "GET /Usuario/Equipos HTTP/1.1" 200 -
+2026-09-07 01:02:36,400 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:02:36] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:02:37,993 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:02:37] "GET /Encargado/solicitudes/pendientes HTTP/1.1" 200 -
+2026-09-07 01:02:38,418 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:02:38] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:04:16,445 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:04:16] "GET /Encargado/solicitudes/en_progreso HTTP/1.1" 200 -
+2026-09-07 01:04:16,709 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:04:16] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:04:18,229 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:04:18] "GET /Encargado/solicitudes/historial HTTP/1.1" 200 -
+2026-09-07 01:04:18,669 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:04:18] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:04:19,367 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:04:19] "GET /Encargado/solicitudes/pendientes HTTP/1.1" 200 -
+2026-09-07 01:04:19,819 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:04:19] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:06:52,910 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:06:52,979 INFO werkzeug WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-07 01:06:52,979 INFO werkzeug Press CTRL+C to quit
+2026-09-07 01:06:52,981 INFO werkzeug  * Restarting with stat
+2026-09-07 01:06:53,950 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:06:54,005 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:06:54,011 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:07:37,575 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:07:37,642 INFO werkzeug WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-07 01:07:37,643 INFO werkzeug Press CTRL+C to quit
+2026-09-07 01:07:37,644 INFO werkzeug  * Restarting with stat
+2026-09-07 01:07:38,477 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:07:38,534 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:07:38,540 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:08:09,283 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:08:09,366 INFO werkzeug WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-07 01:08:09,366 INFO werkzeug Press CTRL+C to quit
+2026-09-07 01:08:09,368 INFO werkzeug  * Restarting with stat
+2026-09-07 01:08:10,242 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:08:10,297 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:08:10,303 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:08:12,015 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:08:12] "GET /Encargado/solicitudes/en_progreso HTTP/1.1" 200 -
+2026-09-07 01:08:12,287 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:08:12] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:08:15,747 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:08:15] "GET /Encargado/solicitudes/pendientes HTTP/1.1" 200 -
+2026-09-07 01:08:16,221 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:08:16] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:08:16,938 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:08:16] "GET /Encargado/solicitudes/historial HTTP/1.1" 200 -
+2026-09-07 01:08:17,382 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:08:17] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:08:23,058 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:08:23] "GET /Encargado/solicitudes/pendientes HTTP/1.1" 200 -
+2026-09-07 01:08:23,492 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:08:23] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:11:27,872 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\routes\\encargado.py', reloading
+2026-09-07 01:11:28,015 INFO werkzeug  * Restarting with stat
+2026-09-07 01:11:29,010 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:11:29,070 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:11:29,075 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:11:34,467 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:11:34] "GET /Encargado/solicitudes/pendientes HTTP/1.1" 500 -
+2026-09-07 01:11:34,690 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:11:34] "GET /Encargado/solicitudes/pendientes?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-09-07 01:11:34,908 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:11:34] "GET /Encargado/solicitudes/pendientes?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-09-07 01:11:34,968 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:11:34] "GET /Encargado/solicitudes/pendientes?__debugger__=yes&cmd=resource&f=console.png&s=Uo5TtXW7yUXFR0gg4yVp HTTP/1.1" 200 -
+2026-09-07 01:11:35,301 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:11:35] "GET /Encargado/solicitudes/pendientes?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-09-07 01:11:57,936 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:11:57] "GET /Encargado/solicitudes/pendientes HTTP/1.1" 200 -
+2026-09-07 01:11:58,374 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:11:58] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:11:59,412 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:11:59] "GET /Encargado/equipos/administrar HTTP/1.1" 200 -
+2026-09-07 01:11:59,852 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:11:59] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:12:01,424 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:12:01] "GET /Encargado/equipos/registrar HTTP/1.1" 200 -
+2026-09-07 01:12:01,853 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:12:01] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:12:02,592 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:12:02] "GET /Encargado/equipos/administrar HTTP/1.1" 200 -
+2026-09-07 01:12:03,043 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:12:03] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:12:03,980 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:12:03] "GET /Encargado/solicitudes/pendientes HTTP/1.1" 200 -
+2026-09-07 01:12:04,406 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:12:04] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:12:05,182 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:12:05] "GET /Encargado/equipos/administrar HTTP/1.1" 200 -
+2026-09-07 01:12:05,630 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:12:05] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:12:06,735 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:12:06] "GET /Encargado/equipos/registrar HTTP/1.1" 200 -
+2026-09-07 01:12:07,168 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:12:07] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:12:38,368 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:12:38] "GET /Encargado/equipos/administrar HTTP/1.1" 200 -
+2026-09-07 01:12:38,826 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:12:38] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:12:39,513 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:12:39] "GET /Encargado/equipos/registrar HTTP/1.1" 200 -
+2026-09-07 01:12:39,941 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:12:39] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:12:41,234 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:12:41] "GET /Encargado/solicitudes/pendientes HTTP/1.1" 200 -
+2026-09-07 01:12:41,679 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:12:41] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:22:23,315 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:22:23,405 INFO werkzeug WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-07 01:22:23,405 INFO werkzeug Press CTRL+C to quit
+2026-09-07 01:22:23,408 INFO werkzeug  * Restarting with stat
+2026-09-07 01:22:24,562 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:22:24,622 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:22:24,628 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:22:27,583 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:22:27] "GET /Encargado/equipos/administrar HTTP/1.1" 500 -
+2026-09-07 01:22:27,800 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:22:27] "GET /Encargado/equipos/administrar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-09-07 01:22:28,064 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:22:28] "GET /Encargado/equipos/administrar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-09-07 01:22:28,437 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:22:28] "GET /Encargado/equipos/administrar?__debugger__=yes&cmd=resource&f=console.png&s=hXdDiowYV72R0ORf5pAZ HTTP/1.1" 200 -
+2026-09-07 01:22:28,703 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:22:28] "GET /Encargado/equipos/administrar?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-09-07 01:22:29,541 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:22:29] "GET /Encargado/equipos/administrar HTTP/1.1" 500 -
+2026-09-07 01:22:29,996 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:22:29] "GET /Encargado/equipos/administrar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:22:29,998 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:22:29] "GET /Encargado/equipos/administrar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:22:30,258 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:22:30] "GET /Encargado/equipos/administrar?__debugger__=yes&cmd=resource&f=console.png&s=hXdDiowYV72R0ORf5pAZ HTTP/1.1" 304 -
+2026-09-07 01:22:30,355 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:22:30] "GET /Encargado/equipos/administrar?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-09-07 01:22:39,218 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:22:39] "GET /Encargado/solicitudes/en_progreso HTTP/1.1" 200 -
+2026-09-07 01:22:39,652 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:22:39] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:22:40,602 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:22:40] "GET /Encargado/solicitudes/historial HTTP/1.1" 200 -
+2026-09-07 01:22:41,043 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:22:41] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:22:41,959 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:22:41] "GET /Encargado/equipos/administrar HTTP/1.1" 500 -
+2026-09-07 01:22:42,426 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:22:42] "GET /Encargado/equipos/administrar?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:22:42,427 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:22:42] "GET /Encargado/equipos/administrar?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:22:42,683 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:22:42] "GET /Encargado/equipos/administrar?__debugger__=yes&cmd=resource&f=console.png&s=hXdDiowYV72R0ORf5pAZ HTTP/1.1" 304 -
+2026-09-07 01:24:16,887 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:24:16,990 INFO werkzeug WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-07 01:24:16,990 INFO werkzeug Press CTRL+C to quit
+2026-09-07 01:24:16,992 INFO werkzeug  * Restarting with stat
+2026-09-07 01:24:18,134 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:24:18,205 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:24:18,213 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:26:04,774 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\routes\\usuario.py', reloading
+2026-09-07 01:26:04,881 INFO werkzeug  * Restarting with stat
+2026-09-07 01:26:05,886 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:26:05,941 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:26:05,946 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:26:23,027 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:26:23] "GET / HTTP/1.1" 302 -
+2026-09-07 01:26:23,276 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:26:23] "GET /login?next=/ HTTP/1.1" 200 -
+2026-09-07 01:26:23,486 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:26:23] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:26:26,084 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:26:26] "GET /registro HTTP/1.1" 200 -
+2026-09-07 01:26:26,325 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:26:26] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:26:27,740 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:26:27] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 01:26:30,859 INFO app user_registered user_id=1 role=alumno
+2026-09-07 01:26:30,859 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:26:30] "POST /registro HTTP/1.1" 200 -
+2026-09-07 01:26:34,536 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:26:34] "GET / HTTP/1.1" 200 -
+2026-09-07 01:26:34,970 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:26:34] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:27:43,774 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:27:43] "GET / HTTP/1.1" 200 -
+2026-09-07 01:27:44,033 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:27:44] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:30:47,203 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\app.py', reloading
+2026-09-07 01:30:47,342 INFO werkzeug  * Restarting with stat
+2026-09-07 01:30:48,390 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:30:48,447 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:30:48,456 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:30:56,106 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:30:56] "GET / HTTP/1.1" 500 -
+2026-09-07 01:30:56,340 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:30:56] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:30:56,564 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:30:56] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:30:56,596 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:30:56] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=k271zNsIPmvj6HNQPdro HTTP/1.1" 200 -
+2026-09-07 01:30:56,923 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:30:56] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-09-07 01:31:18,820 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:31:18] "GET / HTTP/1.1" 500 -
+2026-09-07 01:31:19,250 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:31:19] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:31:19,251 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:31:19] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:31:19,504 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:31:19] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=k271zNsIPmvj6HNQPdro HTTP/1.1" 304 -
+2026-09-07 01:34:46,547 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\app.py', reloading
+2026-09-07 01:34:46,683 INFO werkzeug  * Restarting with stat
+2026-09-07 01:34:47,754 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:34:47,817 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:34:47,824 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:34:51,193 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:34:51] "GET / HTTP/1.1" 500 -
+2026-09-07 01:34:51,447 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:34:51] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:34:51,644 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:34:51] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:34:51,679 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:34:51] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=s2n8DFxas7FNJCOaEqUN HTTP/1.1" 200 -
+2026-09-07 01:35:03,404 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\app.py', reloading
+2026-09-07 01:35:03,691 INFO werkzeug  * Restarting with stat
+2026-09-07 01:35:04,572 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:35:04,627 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:35:04,634 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:35:05,506 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:35:05] "GET / HTTP/1.1" 500 -
+2026-09-07 01:35:05,761 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:35:05] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:35:05,951 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:35:05] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:35:05,982 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:35:05] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=iqKeRF8Y7dpWRVma2GXe HTTP/1.1" 200 -
+2026-09-07 01:35:06,321 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:35:06] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-09-07 01:35:11,943 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\app.py', reloading
+2026-09-07 01:35:12,237 INFO werkzeug  * Restarting with stat
+2026-09-07 01:35:13,247 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:35:13,313 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:35:13,320 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:35:13,418 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:35:13] "GET / HTTP/1.1" 500 -
+2026-09-07 01:35:13,589 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:35:13] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:35:13,853 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:35:13] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:35:14,179 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:35:14] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=KG9rm5aeJLu5MinfTcfD HTTP/1.1" 200 -
+2026-09-07 01:35:14,435 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:35:14] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-09-07 01:35:19,643 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\app.py', reloading
+2026-09-07 01:35:19,932 INFO werkzeug  * Restarting with stat
+2026-09-07 01:35:20,974 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:35:21,033 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:35:21,039 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:35:21,142 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:35:21] "GET / HTTP/1.1" 500 -
+2026-09-07 01:35:21,327 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:35:21] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:35:21,586 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:35:21] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:35:21,924 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:35:21] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=kYWltt2dXND4c8Z2R9lJ HTTP/1.1" 200 -
+2026-09-07 01:35:22,185 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:35:22] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-09-07 01:36:12,877 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\app.py', reloading
+2026-09-07 01:36:13,181 INFO werkzeug  * Restarting with stat
+2026-09-07 01:36:14,226 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:36:14,291 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:36:14,297 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:36:14,401 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:14] "GET / HTTP/1.1" 500 -
+2026-09-07 01:36:14,620 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:14] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:36:14,888 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:14] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:36:15,229 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:15] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=5mmmnbFZ7weWyZ8YhrSO HTTP/1.1" 200 -
+2026-09-07 01:36:15,472 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:15] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-09-07 01:36:36,119 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\app.py', reloading
+2026-09-07 01:36:36,406 INFO werkzeug  * Restarting with stat
+2026-09-07 01:36:37,422 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:36:37,495 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:36:37,502 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:36:37,602 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:37] "GET / HTTP/1.1" 500 -
+2026-09-07 01:36:37,818 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:37] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:36:38,038 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:38] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:36:38,064 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:38] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=kb8EDicTD8pzrsUCTQc0 HTTP/1.1" 200 -
+2026-09-07 01:36:38,399 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:38] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-09-07 01:36:44,887 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\app.py', reloading
+2026-09-07 01:36:45,156 INFO werkzeug  * Restarting with stat
+2026-09-07 01:36:46,222 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:36:46,289 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:36:46,297 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:36:46,450 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:46] "GET / HTTP/1.1" 500 -
+2026-09-07 01:36:46,706 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:46] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:36:46,899 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:46] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:36:46,928 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:46] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=xAZj2EIcolgxW9nUDcfc HTTP/1.1" 200 -
+2026-09-07 01:36:47,270 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:47] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-09-07 01:36:53,618 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\app.py', reloading
+2026-09-07 01:36:53,884 INFO werkzeug  * Restarting with stat
+2026-09-07 01:36:54,881 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:36:54,944 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:36:54,950 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:36:55,583 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:55] "GET / HTTP/1.1" 500 -
+2026-09-07 01:36:55,830 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:55] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:36:56,022 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:56] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:36:56,052 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:56] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=Et6tEvzDPxiE38P0b1ot HTTP/1.1" 200 -
+2026-09-07 01:36:56,392 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:36:56] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-09-07 01:37:05,368 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\app.py', reloading
+2026-09-07 01:37:05,811 INFO werkzeug  * Restarting with stat
+2026-09-07 01:37:06,835 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:37:06,910 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:37:06,918 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:37:07,019 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:37:07] "GET / HTTP/1.1" 500 -
+2026-09-07 01:37:07,232 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:37:07] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:37:07,447 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:37:07] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:37:07,474 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:37:07] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=fYXAamPrngXY3xnslpp3 HTTP/1.1" 200 -
+2026-09-07 01:37:07,808 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:37:07] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-09-07 01:38:55,707 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\app.py', reloading
+2026-09-07 01:38:55,809 INFO werkzeug  * Restarting with stat
+2026-09-07 01:38:56,988 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:38:57,053 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:38:57,059 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:38:58,358 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:38:58] "GET / HTTP/1.1" 500 -
+2026-09-07 01:38:58,606 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:38:58] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:38:58,805 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:38:58] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:38:58,833 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:38:58] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=6712hdACFsdMiwBNeyeb HTTP/1.1" 200 -
+2026-09-07 01:38:59,168 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:38:59] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-09-07 01:39:04,377 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\app.py', reloading
+2026-09-07 01:39:04,708 INFO werkzeug  * Restarting with stat
+2026-09-07 01:39:05,637 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:39:05,690 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:39:05,696 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:39:07,584 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:39:07] "GET / HTTP/1.1" 500 -
+2026-09-07 01:39:07,826 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:39:07] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:39:08,031 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:39:08] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:39:08,065 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:39:08] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=DQaTLN6pLl5JfwARAQUl HTTP/1.1" 200 -
+2026-09-07 01:39:08,396 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:39:08] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-09-07 01:40:19,241 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\app.py', reloading
+2026-09-07 01:40:19,362 INFO werkzeug  * Restarting with stat
+2026-09-07 01:40:20,319 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:40:20,378 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:40:20,384 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:40:24,598 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\app.py', reloading
+2026-09-07 01:40:24,732 INFO werkzeug  * Restarting with stat
+2026-09-07 01:40:25,735 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:40:25,809 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:40:25,816 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:40:26,806 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:40:26] "GET / HTTP/1.1" 500 -
+2026-09-07 01:40:27,045 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:40:27] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:40:27,253 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:40:27] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:40:27,280 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:40:27] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=iWxLe3mQMSemCZMLvSDC HTTP/1.1" 200 -
+2026-09-07 01:40:27,617 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:40:27] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-09-07 01:40:48,646 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\app.py', reloading
+2026-09-07 01:40:48,960 INFO werkzeug  * Restarting with stat
+2026-09-07 01:40:49,969 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:40:50,028 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:40:50,034 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:40:50,132 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:40:50] "GET / HTTP/1.1" 500 -
+2026-09-07 01:40:50,315 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:40:50] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:40:50,573 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:40:50] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:40:50,921 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:40:50] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=AXWLwxCRLrGLnQyfXh8a HTTP/1.1" 200 -
+2026-09-07 01:40:51,166 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:40:51] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-09-07 01:40:56,348 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\app.py', reloading
+2026-09-07 01:40:56,638 INFO werkzeug  * Restarting with stat
+2026-09-07 01:40:57,646 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:40:57,704 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:40:57,711 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:40:57,812 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:40:57] "GET / HTTP/1.1" 500 -
+2026-09-07 01:40:57,984 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:40:57] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:40:58,249 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:40:58] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:40:58,582 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:40:58] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=mHqCRMhW9HZJrnqOB4lz HTTP/1.1" 200 -
+2026-09-07 01:40:58,843 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:40:58] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-09-07 01:42:33,038 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\app.py', reloading
+2026-09-07 01:42:33,226 INFO werkzeug  * Restarting with stat
+2026-09-07 01:42:34,264 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:42:34,325 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:42:34,331 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:42:36,316 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:42:36] "GET / HTTP/1.1" 500 -
+2026-09-07 01:42:36,585 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:42:36] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-09-07 01:42:36,763 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:42:36] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-09-07 01:42:36,789 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:42:36] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=HvxdELxnUK333vk5Habw HTTP/1.1" 200 -
+2026-09-07 01:42:37,137 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:42:37] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-09-07 01:42:44,753 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\app.py', reloading
+2026-09-07 01:42:45,050 INFO werkzeug  * Restarting with stat
+2026-09-07 01:42:46,058 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:42:46,116 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:42:46,122 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:42:46,190 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:42:46] "GET / HTTP/1.1" 302 -
+2026-09-07 01:42:46,216 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:42:46] "GET /Usuario/Equipos HTTP/1.1" 200 -
+2026-09-07 01:42:46,718 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:42:46] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:52:34,680 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:52:34,776 INFO werkzeug WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-07 01:52:34,776 INFO werkzeug Press CTRL+C to quit
+2026-09-07 01:52:34,777 INFO werkzeug  * Restarting with stat
+2026-09-07 01:52:35,803 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 01:52:35,874 WARNING werkzeug  * Debugger is active!
+2026-09-07 01:52:35,881 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 01:52:35,992 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:52:35] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 01:52:36,198 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:52:36] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:52:37,928 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:52:37] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 01:52:38,189 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:52:38] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:52:39,469 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:52:39] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 01:52:39,922 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:52:39] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:52:42,023 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:52:42] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 01:52:42,464 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:52:42] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:52:43,300 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:52:43] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 01:52:43,734 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:52:43] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:52:48,339 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:52:48] "GET /Usuario/Equipos HTTP/1.1" 200 -
+2026-09-07 01:52:48,777 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:52:48] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:52:50,514 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:52:50] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 01:52:50,972 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:52:50] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 01:54:45,347 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:54:45] "GET /Usuario/Equipos HTTP/1.1" 200 -
+2026-09-07 01:54:45,604 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 01:54:45] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:08:14,812 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 02:08:14,887 INFO werkzeug WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-07 02:08:14,887 INFO werkzeug Press CTRL+C to quit
+2026-09-07 02:08:14,889 INFO werkzeug  * Restarting with stat
+2026-09-07 02:08:15,885 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 02:08:15,950 WARNING werkzeug  * Debugger is active!
+2026-09-07 02:08:15,957 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 02:08:45,171 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:08:45] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 02:08:45,440 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:08:45] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:08:46,486 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:08:46] "GET /Encargado/solicitudes/pendientes HTTP/1.1" 200 -
+2026-09-07 02:08:46,931 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:08:46] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:08:54,677 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:08:54] "GET /Encargado/solicitudes/pendientes HTTP/1.1" 302 -
+2026-09-07 02:08:54,949 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:08:54] "GET /login?next=/Encargado/solicitudes/pendientes HTTP/1.1" 200 -
+2026-09-07 02:08:55,048 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:08:55] "GET /static/css/main.css HTTP/1.1" 200 -
+2026-09-07 02:08:57,991 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:08:57] "GET /registro HTTP/1.1" 200 -
+2026-09-07 02:08:58,255 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:08:58] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:08:59,862 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:08:59] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:00,288 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:00] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:00,354 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:00] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:00,530 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:00] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:00,547 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:00] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:00,697 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:00] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:00,848 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:00] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:02,233 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:02] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:05,161 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:05] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:05,244 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:05] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:05,410 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:05] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:05,459 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:05] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:05,614 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:05] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:05,859 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:05] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:06,327 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:06] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:06,490 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:06] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:07,214 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:07] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:07,700 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:07] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:07,880 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:07] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:07,961 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:07] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:08,151 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:08] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:10,044 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:10] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:10,125 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:10] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:10,254 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:10] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:10,309 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:10] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:10,612 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:10] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:10,756 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:10] "POST /api/validar_correo HTTP/1.1" 200 -
+2026-09-07 02:09:14,791 INFO app user_registered user_id=2 role=alumno
+2026-09-07 02:09:14,791 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:14] "POST /registro HTTP/1.1" 200 -
+2026-09-07 02:09:19,239 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:19] "GET / HTTP/1.1" 302 -
+2026-09-07 02:09:19,506 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:19] "GET /login?next=/ HTTP/1.1" 200 -
+2026-09-07 02:09:19,555 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:19] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:09:35,114 INFO app user_login_succeeded user_id=2
+2026-09-07 02:09:35,115 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:35] "POST /login HTTP/1.1" 302 -
+2026-09-07 02:09:35,439 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:35] "GET /Usuario/Equipos HTTP/1.1" 200 -
+2026-09-07 02:09:35,692 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:35] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:09:46,131 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:46] "GET /Encargado/equipos/administrar HTTP/1.1" 200 -
+2026-09-07 02:09:46,574 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:46] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:09:47,910 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:47] "GET /Encargado/equipos/registrar HTTP/1.1" 200 -
+2026-09-07 02:09:48,360 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:09:48] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:10:06,258 INFO app equipment_registered equipment_id=1 manager_id=1 available=True
+2026-09-07 02:10:06,259 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:10:06] "POST /Encargado/equipos/registrar HTTP/1.1" 302 -
+2026-09-07 02:10:06,573 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:10:06] "GET /Encargado/equipos/administrar HTTP/1.1" 200 -
+2026-09-07 02:10:06,829 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:10:06] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:10:51,312 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:10:51] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 02:10:51,546 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:10:51] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:12:38,919 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:12:38] "GET /Encargado/equipos/registrar HTTP/1.1" 200 -
+2026-09-07 02:12:39,183 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:12:39] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:12:47,295 INFO app equipment_registered equipment_id=2 manager_id=1 available=True
+2026-09-07 02:12:47,296 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:12:47] "POST /Encargado/equipos/registrar HTTP/1.1" 302 -
+2026-09-07 02:12:47,611 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:12:47] "GET /Encargado/equipos/administrar HTTP/1.1" 200 -
+2026-09-07 02:12:47,875 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:12:47] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:12:48,966 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:12:48] "GET /Encargado/equipos/registrar HTTP/1.1" 200 -
+2026-09-07 02:12:49,405 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:12:49] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:12:57,021 INFO app equipment_registered equipment_id=3 manager_id=1 available=True
+2026-09-07 02:12:57,022 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:12:57] "POST /Encargado/equipos/registrar HTTP/1.1" 302 -
+2026-09-07 02:12:57,348 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:12:57] "GET /Encargado/equipos/administrar HTTP/1.1" 200 -
+2026-09-07 02:12:57,604 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:12:57] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:12:59,035 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:12:59] "GET /Encargado/equipos/registrar HTTP/1.1" 200 -
+2026-09-07 02:12:59,481 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:12:59] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:13:05,658 INFO app equipment_registered equipment_id=4 manager_id=1 available=True
+2026-09-07 02:13:05,659 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:13:05] "POST /Encargado/equipos/registrar HTTP/1.1" 302 -
+2026-09-07 02:13:05,982 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:13:05] "GET /Encargado/equipos/administrar HTTP/1.1" 200 -
+2026-09-07 02:13:06,246 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:13:06] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:13:44,309 INFO app equipment_availability_checked user_id=2 available_count=4
+2026-09-07 02:13:44,310 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:13:44] "GET /Usuario/Solicitar?fecha_inicio=2026-09-08&fecha_fin=2026-09-09 HTTP/1.1" 200 -
+2026-09-07 02:13:44,560 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:13:44] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:14:07,943 INFO app loan_request_created request_id=1 user_id=2 equipment_count=1 state=pendiente
+2026-09-07 02:14:07,945 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:14:07] "POST /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 02:14:08,287 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:14:08] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:14:11,137 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:14:11] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 02:14:11,475 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:14:11] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:14:17,197 INFO app equipment_availability_checked user_id=2 available_count=4
+2026-09-07 02:14:17,199 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:14:17] "GET /Usuario/Solicitar?fecha_inicio=2026-09-09&fecha_fin=2026-09-10 HTTP/1.1" 200 -
+2026-09-07 02:14:17,540 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:14:17] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:14:22,171 INFO app loan_request_created request_id=2 user_id=2 equipment_count=1 state=pendiente
+2026-09-07 02:14:22,173 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:14:22] "POST /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 02:14:22,518 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:14:22] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:14:24,624 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:14:24] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 02:14:24,965 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:14:24] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:14:33,680 INFO app equipment_availability_checked user_id=2 available_count=4
+2026-09-07 02:14:33,681 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:14:33] "GET /Usuario/Solicitar?fecha_inicio=2026-09-11&fecha_fin=2026-09-14 HTTP/1.1" 200 -
+2026-09-07 02:14:34,022 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:14:34] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:14:37,831 INFO app loan_request_created request_id=3 user_id=2 equipment_count=1 state=pendiente
+2026-09-07 02:14:37,833 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:14:37] "POST /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 02:14:38,181 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:14:38] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:14:39,224 WARNING app loan_request_access_denied user_id=2 reason=active_limit limit=3
+2026-09-07 02:14:39,226 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:14:39] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 02:14:39,577 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:14:39] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:14:46,523 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:14:46] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 02:14:46,868 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:14:46] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:15:03,235 WARNING app loan_request_access_denied user_id=2 reason=active_limit limit=3
+2026-09-07 02:15:03,237 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:15:03] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 02:15:03,590 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:15:03] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:16:41,314 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:16:41] "GET /Encargado/solicitudes/pendientes HTTP/1.1" 200 -
+2026-09-07 02:16:41,574 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:16:41] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:16:48,446 INFO app loan_state_changed request_id=3 manager_id=1 previous_state=pendiente current_state=aprobado
+2026-09-07 02:16:48,447 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:16:48] "POST /Encargado/procesar/3/aprobado HTTP/1.1" 302 -
+2026-09-07 02:16:48,771 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:16:48] "GET /Encargado/solicitudes/pendientes HTTP/1.1" 200 -
+2026-09-07 02:16:49,025 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:16:49] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:16:55,053 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:16:55] "GET /Usuario/Equipos HTTP/1.1" 200 -
+2026-09-07 02:16:55,316 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:16:55] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:16:56,140 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:16:56] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 02:16:56,479 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:16:56] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:17:35,921 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:17:35] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 02:17:36,266 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:17:36] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:17:40,204 WARNING app loan_request_access_denied user_id=2 reason=active_limit limit=3
+2026-09-07 02:17:40,205 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:17:40] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 02:17:40,561 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:17:40] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:17:40,979 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:17:40] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 02:17:41,327 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:17:41] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:17:54,176 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:17:54] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 02:17:54,511 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:17:54] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:17:57,285 WARNING app loan_request_access_denied user_id=2 reason=active_limit limit=3
+2026-09-07 02:17:57,287 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:17:57] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 02:17:57,632 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:17:57] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:17:58,046 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:17:58] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 02:17:58,393 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:17:58] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:17:59,330 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:17:59] "GET /Usuario/Equipos HTTP/1.1" 200 -
+2026-09-07 02:17:59,669 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:17:59] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:18:00,060 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:18:00] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 02:18:00,400 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:18:00] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:18:15,249 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:18:15] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 02:18:15,598 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:18:15] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:18:20,625 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:18:20] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 02:18:20,963 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:18:20] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:18:27,726 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:18:27] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 02:18:28,070 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:18:28] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:18:33,359 INFO app loan_cancelled request_id=1 user_id=2 previous_state=pendiente
+2026-09-07 02:18:33,392 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:18:33] "POST /Usuario/cancelar/1 HTTP/1.1" 500 -
+2026-09-07 02:18:33,745 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:18:33] "GET /Usuario/cancelar/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-09-07 02:18:33,746 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:18:33] "GET /Usuario/cancelar/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-09-07 02:18:33,991 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:18:33] "GET /Usuario/cancelar/1?__debugger__=yes&cmd=resource&f=console.png&s=5GzKJiyg24uvLIUJJAWL HTTP/1.1" 200 -
+2026-09-07 02:18:34,084 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:18:34] "GET /Usuario/cancelar/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-09-07 02:19:04,682 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\routes\\usuario.py', reloading
+2026-09-07 02:19:04,907 INFO werkzeug  * Restarting with stat
+2026-09-07 02:19:05,943 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 02:19:06,011 WARNING werkzeug  * Debugger is active!
+2026-09-07 02:19:06,017 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 02:19:07,194 WARNING app loan_cancellation_rejected request_id=1 user_id=2 reason=invalid_state state=cancelado
+2026-09-07 02:19:07,195 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:19:07] "POST /Usuario/cancelar/1 HTTP/1.1" 302 -
+2026-09-07 02:19:07,464 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:19:07] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 02:19:07,556 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:19:07] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:19:37,022 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:19:37] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 02:19:37,277 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:19:37] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:19:44,031 INFO app equipment_availability_checked user_id=2 available_count=4
+2026-09-07 02:19:44,033 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:19:44] "GET /Usuario/Solicitar?fecha_inicio=2026-09-09&fecha_fin=2026-09-10 HTTP/1.1" 200 -
+2026-09-07 02:19:44,376 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:19:44] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:19:46,508 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:19:46] "GET /Usuario/Equipos HTTP/1.1" 200 -
+2026-09-07 02:19:46,852 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:19:46] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:19:47,253 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:19:47] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 02:19:47,599 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:19:47] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:21:00,680 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:21:00] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 02:21:00,921 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:21:00] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:21:01,288 WARNING app loan_request_access_denied user_id=2 reason=blocked_user
+2026-09-07 02:21:01,290 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:21:01] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 02:21:01,633 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:21:01] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:24:10,533 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:24:10] "GET /Encargado/equipos/administrar HTTP/1.1" 200 -
+2026-09-07 02:24:10,790 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:24:10] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:24:12,856 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:24:12] "GET /Encargado/equipos/registrar HTTP/1.1" 200 -
+2026-09-07 02:24:13,311 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:24:13] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:24:25,392 INFO app equipment_registered equipment_id=5 manager_id=1 available=True
+2026-09-07 02:24:25,393 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:24:25] "POST /Encargado/equipos/registrar HTTP/1.1" 302 -
+2026-09-07 02:24:25,711 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:24:25] "GET /Encargado/equipos/administrar HTTP/1.1" 200 -
+2026-09-07 02:24:25,976 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:24:25] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:24:38,423 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:24:38] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 02:24:38,683 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:24:38] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:25:02,747 INFO app loan_cancelled request_id=2 user_id=2 previous_state=pendiente
+2026-09-07 02:25:02,748 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:25:02] "POST /Usuario/cancelar/2 HTTP/1.1" 302 -
+2026-09-07 02:25:03,067 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:25:03] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 02:25:03,319 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:25:03] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:25:18,369 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:25:18] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 02:25:18,706 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:25:18] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:25:31,073 INFO app equipment_availability_checked user_id=2 available_count=5
+2026-09-07 02:25:31,075 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:25:31] "GET /Usuario/Solicitar?fecha_inicio=2026-09-08&fecha_fin=2026-09-09 HTTP/1.1" 200 -
+2026-09-07 02:25:31,426 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:25:31] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:25:35,956 INFO app loan_request_created request_id=4 user_id=2 equipment_count=1 state=pendiente
+2026-09-07 02:25:35,958 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:25:35] "POST /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 02:25:36,294 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:25:36] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:25:39,647 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:25:39] "GET /Encargado/solicitudes/pendientes HTTP/1.1" 200 -
+2026-09-07 02:25:39,891 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:25:39] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:25:41,734 INFO app loan_state_changed request_id=4 manager_id=1 previous_state=pendiente current_state=aprobado
+2026-09-07 02:25:41,735 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:25:41] "POST /Encargado/procesar/4/aprobado HTTP/1.1" 302 -
+2026-09-07 02:25:42,053 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:25:42] "GET /Encargado/solicitudes/pendientes HTTP/1.1" 200 -
+2026-09-07 02:25:42,319 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:25:42] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:25:44,718 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:25:44] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 02:25:45,058 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:25:45] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:25:50,071 INFO app equipment_availability_checked user_id=2 available_count=4
+2026-09-07 02:25:50,073 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:25:50] "GET /Usuario/Solicitar?fecha_inicio=2026-09-10&fecha_fin=2026-09-11 HTTP/1.1" 200 -
+2026-09-07 02:25:50,431 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:25:50] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:27:41,850 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:27:41] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 02:27:42,114 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:27:42] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:27:52,804 INFO app loan_cancelled request_id=4 user_id=2 previous_state=en posesion
+2026-09-07 02:27:52,806 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:27:52] "POST /Usuario/cancelar/4 HTTP/1.1" 302 -
+2026-09-07 02:27:53,129 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:27:53] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 02:27:53,378 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:27:53] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:30:02,229 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:30:02] "GET /Usuario/Historial HTTP/1.1" 200 -
+2026-09-07 02:30:02,459 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:30:02] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:32:20,776 INFO werkzeug  * Detected change in 'C:\\Users\\Lenovo\\Desktop\\Cosas U\\Semestre 14\\Pruebas de Software\\Tarea_1\\tarea1_pds\\routes\\usuario.py', reloading
+2026-09-07 02:32:20,913 INFO werkzeug  * Restarting with stat
+2026-09-07 02:32:22,054 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 02:32:22,124 WARNING werkzeug  * Debugger is active!
+2026-09-07 02:32:22,132 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 02:46:22,153 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 02:46:22,233 INFO werkzeug WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-09-07 02:46:22,233 INFO werkzeug Press CTRL+C to quit
+2026-09-07 02:46:22,235 INFO werkzeug  * Restarting with stat
+2026-09-07 02:46:23,255 INFO app observability_configured sentry_enabled=True environment=development
+2026-09-07 02:46:23,319 WARNING werkzeug  * Debugger is active!
+2026-09-07 02:46:23,325 INFO werkzeug  * Debugger PIN: 374-217-354
+2026-09-07 02:46:40,776 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:46:40] "GET /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 02:46:41,031 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:46:41] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:46:51,794 INFO app equipment_availability_checked user_id=2 available_count=4
+2026-09-07 02:46:51,796 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:46:51] "GET /Usuario/Solicitar?fecha_inicio=2026-09-09&fecha_fin=2026-09-10 HTTP/1.1" 200 -
+2026-09-07 02:46:52,137 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:46:52] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:46:57,541 INFO app loan_request_created request_id=5 user_id=2 equipment_count=1 state=pendiente
+2026-09-07 02:46:57,544 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:46:57] "POST /Usuario/Solicitar HTTP/1.1" 200 -
+2026-09-07 02:46:57,892 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:46:57] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:47:38,712 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:47:38] "GET /Encargado/solicitudes/pendientes HTTP/1.1" 200 -
+2026-09-07 02:47:38,963 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:47:38] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:47:42,211 INFO app loan_state_changed request_id=5 manager_id=1 previous_state=pendiente current_state=aprobado
+2026-09-07 02:47:42,212 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:47:42] "POST /Encargado/procesar/5/aprobado HTTP/1.1" 302 -
+2026-09-07 02:47:42,539 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:47:42] "GET /Encargado/solicitudes/pendientes HTTP/1.1" 200 -
+2026-09-07 02:47:42,790 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:47:42] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:47:45,655 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:47:45] "GET /Encargado/solicitudes/en_progreso HTTP/1.1" 200 -
+2026-09-07 02:47:46,119 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:47:46] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:47:52,991 INFO app loan_state_changed request_id=4 manager_id=1 previous_state=en posesion current_state=restituido
+2026-09-07 02:47:52,992 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:47:52] "POST /Encargado/procesar/4/restituido HTTP/1.1" 302 -
+2026-09-07 02:47:53,309 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:47:53] "GET /Encargado/solicitudes/en_progreso HTTP/1.1" 200 -
+2026-09-07 02:47:53,571 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:47:53] "GET /static/css/main.css HTTP/1.1" 304 -
+2026-09-07 02:48:04,135 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:48:04] "GET /Encargado/solicitudes/historial HTTP/1.1" 200 -
+2026-09-07 02:48:04,568 INFO werkzeug 127.0.0.1 - - [07/Sep/2026 02:48:04] "GET /static/css/main.css HTTP/1.1" 304 -

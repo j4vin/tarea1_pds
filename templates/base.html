@@ -7,6 +7,23 @@
     {% block head %}{% endblock %}
 </head>
 <body>
+    {% if current_user.is_authenticated %}
+    <div style="background: #333; color: white; padding: 10px; text-align: right;">
+        
+        {# Solo el encargado ve estos links #}
+        {% if current_user.encargado %}
+            <strong>Panel de Control:</strong>
+            <a href="{{ url_for('usuario.equipos') }}" style="color: #add8e6;">Modo USUARIO</a> | 
+            <a href="{{ url_for('encargado.pendientes') }}" style="color: #ffb6c1;">Modo ENCARGADO</a> |
+        {% endif %}
+
+        {# Todos los usuarios logueados ven este link #}
+        <a href="{{ url_for('auth.logout') }}" style="color: #ff4444; text-decoration: none; font-weight: bold;">
+            Cerrar Sesión ({{ current_user.nombre }})
+        </a>
+    </div>
+    {% endif %}
+    
     {% block body %}{% endblock %}
 </body>
 </html>
