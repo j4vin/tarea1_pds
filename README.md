@@ -2,6 +2,7 @@
 ## Integrantes:
 - Esteban Becerra
 - Javiera Cortés
+- Beatriz Vázquez
 
 ## Instalar:
 pip install virtualenv
