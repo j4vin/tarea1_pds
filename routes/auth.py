@@ -16,7 +16,7 @@ def login():
         if usuario:
             login_user(usuario)
             current_app.logger.info("user_login_succeeded user_id=%s", usuario.id)
-            return redirect(url_for('index')) ### AQUI esta el redirect
+            return redirect(url_for('usuario.equipos')) ### AQUI esta el redirect
         
         current_app.logger.warning("user_login_failed")
         flash('Correo o contraseña incorrectos')
