@@ -1,9 +1,26 @@
 from database.models import db, Solicitud
 from datetime import date
+from flask import current_app
 
 def gestionar_solicitud(sol_id, nuevo_estado, admin_id, motivo=None):
-    sol = Solicitud.query.get(sol_id)
-    if not sol: return False
+    try:
+        sol = Solicitud.query.get(sol_id)
+    except Exception:
+        current_app.logger.exception(
+            "loan_lookup_failed request_id=%s manager_id=%s",
+            sol_id,
+            admin_id,
+        )
+        raise
+    if not sol:
+        current_app.logger.warning(
+            "loan_state_change_rejected request_id=%s manager_id=%s reason=not_found",
+            sol_id,
+            admin_id,
+        )
+        return False
+
+    estado_anterior = sol.estado
 
     if nuevo_estado == 'aprobado':
         sol.estado = 'aprobado'
@@ -22,7 +39,35 @@ def gestionar_solicitud(sol_id, nuevo_estado, admin_id, motivo=None):
         sol.estado = 'restituido'
         sol.fecha_devolucion = date.today()
 
-    db.session.commit()
+    else:
+        current_app.logger.warning(
+            "loan_state_change_rejected request_id=%s manager_id=%s reason=invalid_state requested_state=%s",
+            sol_id,
+            admin_id,
+            nuevo_estado,
+        )
+        return False
+
+    try:
+        db.session.commit()
+    except Exception:
+        db.session.rollback()
+        current_app.logger.exception(
+            "loan_state_change_failed request_id=%s manager_id=%s previous_state=%s requested_state=%s",
+            sol_id,
+            admin_id,
+            estado_anterior,
+            nuevo_estado,
+        )
+        raise
+
+    current_app.logger.info(
+        "loan_state_changed request_id=%s manager_id=%s previous_state=%s current_state=%s",
+        sol_id,
+        admin_id,
+        estado_anterior,
+        nuevo_estado,
+    )
     return True
 
 def obtener_solicitudes_progreso_ordenadas():

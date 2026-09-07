@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, current_app, render_template, request, redirect, url_for
 ### from database.models import db, Solicitud, Equipo, SolicitudEquipo
 from flask_login import current_user, login_required
 from datetime import date, timedelta, datetime
@@ -22,6 +22,10 @@ def equipos():
 def solicitar():
 
     if current_user.condicion_bloqueo != 0:
+        current_app.logger.warning(
+            "loan_request_access_denied user_id=%s reason=blocked_user",
+            current_user.id,
+        )
         return render_template('solicitar.html', bloqueado=True)
 
     hoy = date.today()
@@ -31,6 +35,11 @@ def solicitar():
     cupo_disponible = limite_base - equipos_ya_poseidos
 
     if cupo_disponible <= 0:
+        current_app.logger.warning(
+            "loan_request_access_denied user_id=%s reason=active_limit limit=%s",
+            current_user.id,
+            limite_base,
+        )
         return render_template('solicitar.html', cupo_excedido=True, limite=limite_base)
 
     ### PASO 1: Selección de fechas
@@ -45,6 +54,11 @@ def solicitar():
         f_fin = datetime.strptime(request.args.get('fecha_fin'), '%Y-%m-%d').date()
         
         equipos = obtener_equipos_disponibles(f_ini, f_fin)
+        current_app.logger.info(
+            "equipment_availability_checked user_id=%s available_count=%s",
+            current_user.id,
+            len(equipos),
+        )
         return render_template('solicitar.html', paso=2, equipos=equipos, f_ini=f_ini, f_fin=f_fin, max_equipos=cupo_disponible)
 
 
@@ -60,6 +74,13 @@ def solicitar():
                 request.form.get('f_fin'), 
                 equipo_ids,
                 motivo
+            )
+        else:
+            current_app.logger.warning(
+                "loan_request_rejected user_id=%s reason=invalid_equipment_count requested=%s available_slots=%s",
+                current_user.id,
+                len(equipo_ids),
+                cupo_disponible,
             )
     
     return render_template('Solicitar.html')
@@ -79,4 +100,10 @@ def cancelar(id):
     motivo = request.form.get('motivo_cancelacion') # Capturamos el motivo del HTML
     if motivo:
         procesar_cancelacion(id, current_user.id, motivo)
+    else:
+        current_app.logger.warning(
+            "loan_cancellation_rejected request_id=%s user_id=%s reason=missing_reason",
+            id,
+            current_user.id,
+        )
     return redirect(url_for('lector.historial'))

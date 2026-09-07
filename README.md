@@ -34,6 +34,15 @@ Si `SENTRY_DSN` no está definido, los logs locales siguen funcionando y la apli
 
 Los registros no incluyen contraseñas ni correos completos. Sentry está configurado con el envío automático de información personal desactivado.
 
+Se registran, entre otros, los siguientes eventos:
+
+- Creación, rechazo y cancelación de solicitudes.
+- Cambios de estado de solicitudes realizados por encargados.
+- Registro de equipos y cambios en su disponibilidad.
+- Consultas de disponibilidad y bloqueos por límite o morosidad.
+- Intentos de acceso sin permisos de encargado.
+- Errores inesperados al guardar cambios en la base de datos.
+
 # Features en esta rama
 
 ### Estructura base

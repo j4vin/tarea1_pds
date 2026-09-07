@@ -1,4 +1,5 @@
 from datetime import timedelta, datetime
+from flask import current_app
 from database.models import db, Equipo, Solicitud, SolicitudEquipo
 
 
@@ -48,11 +49,28 @@ def guardar_nueva_solicitud(user_id, f_ini_str, f_fin_str, equipo_ids, motivo):
         estado="pendiente",
         motivo_solicitud=motivo
     )
-    db.session.add(nueva_sol)
-    db.session.flush()
+    try:
+        db.session.add(nueva_sol)
+        db.session.flush()
 
-    for eid in equipo_ids:
-        nueva_relacion = SolicitudEquipo(solicitud_id=nueva_sol.id, equipo_id=int(eid))
-        db.session.add(nueva_relacion)
+        for eid in equipo_ids:
+            nueva_relacion = SolicitudEquipo(solicitud_id=nueva_sol.id, equipo_id=int(eid))
+            db.session.add(nueva_relacion)
 
-    db.session.commit()
+        db.session.commit()
+    except Exception:
+        db.session.rollback()
+        current_app.logger.exception(
+            "loan_request_creation_failed user_id=%s equipment_count=%s",
+            user_id,
+            len(equipo_ids),
+        )
+        raise
+
+    current_app.logger.info(
+        "loan_request_created request_id=%s user_id=%s equipment_count=%s state=pendiente",
+        nueva_sol.id,
+        user_id,
+        len(equipo_ids),
+    )
+    return nueva_sol
