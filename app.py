@@ -23,6 +23,7 @@ from api.auth import api_auth_bp
 from routes.registro import registro_bp
 from routes.auth import auth_bp
 from routes.usuario import usuario_bp
+from routes.encargado import encargado_bp
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Logica del login
@@ -40,6 +41,7 @@ app.register_blueprint(api_auth_bp)
 app.register_blueprint(registro_bp)
 app.register_blueprint(auth_bp)
 app.register_blueprint(usuario_bp)
+app.register_blueprint(encargado_bp)
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
