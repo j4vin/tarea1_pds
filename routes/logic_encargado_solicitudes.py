@@ -24,3 +24,15 @@ def gestionar_solicitud(sol_id, nuevo_estado, admin_id, motivo=None):
 
     db.session.commit()
     return True
+
+def obtener_solicitudes_progreso_ordenadas():
+    estados_visibles = ['atrasado', 'aprobado', 'en posesion']
+    sols = Solicitud.query.filter(Solicitud.estado.in_(estados_visibles)).all()
+
+    prioridad = {
+        'atrasado': 0,
+        'aprobado': 1,
+        'en posesion': 2
+    }
+
+    return sorted(sols, key=lambda x: prioridad.get(x.estado.lower(), 99))

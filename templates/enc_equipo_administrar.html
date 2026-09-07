@@ -1,0 +1,40 @@
+{% extends 'encargado_equipos.html' %}
+
+{% block contenido_equipos %}
+    <h3>Administración de Inventario</h3>
+    <table border="1" style="width: 100%; border-collapse: collapse;">
+        <thead style="background: #f2f2f2;">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Tiempos (Min/Max)</th>
+                <th>Estado</th>
+                <th>Último Motivo</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for eq in equipos %}
+            <tr>
+                <td>{{ eq.id }}</td>
+                <td>{{ eq.nombre }}</td>
+                <td>{{ eq.tiempo_min }} / {{ eq.tiempo_max }} días</td>
+                <td style="font-weight: bold; color: {{ 'green' if eq.disponible else 'red' }};">
+                    {{ 'DISPONIBLE' if eq.disponible else 'NO DISPONIBLE' }}
+                </td>
+                <td><small>{{ eq.motivo or '-' }}</small></td>
+                <td>
+                    <form action="{{ url_for('encargado.cambiar_estado', id=eq.id) }}" method="POST">
+                        {# Si está disponible (True), el botón enviará False #}
+                        <input type="hidden" name="nuevo_estado" value="{{ 'False' if eq.disponible else 'True' }}">
+                        <input type="text" name="motivo" placeholder="Motivo del cambio" required style="width: 120px;">
+                        <button type="submit">
+                            Marcar como {{ 'FUERA DE SERVICIO' if eq.disponible else 'DISPONIBLE' }}
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

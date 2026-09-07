@@ -1,9 +1,12 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from flask_login import current_user, login_required
 
+
+
 from utils import encargado_required
-from database.models import Solicitud
-from logic_encargado_solicitudes import gestionar_solicitud
+from database.models import Solicitud, Equipo
+from logic_encargado_solicitudes import gestionar_solicitud, obtener_solicitudes_progreso_ordenadas
+from logic_enc_equipos import registrar_nuevo_equipo, modificar_disponibilidad
 
 
 encargado_bp = Blueprint('encargado', __name__, url_prefix='/Encargado')
@@ -19,8 +22,8 @@ def pendientes():
 @login_required
 @encargado_required
 def en_progreso():
-    # Estados intermedios para el admin
-    sols = Solicitud.query.filter(Solicitud.estado.in_(['aprobado', 'en posesion', 'atrasado'])).all()
+    
+    sols = obtener_solicitudes_progreso_ordenadas()
     return render_template('enc_sol_progreso.html', solicitudes=sols)
 
 @encargado_bp.route('/solicitudes/historial')
@@ -39,6 +42,42 @@ def procesar(id, estado):
     motivo = request.form.get('motivo')
     gestionar_solicitud(id, estado, current_user.id, motivo)
     return redirect(request.referrer) 
+
+
+
+### Equipos
+@encargado_bp.route('/equipos/administrar')
+@login_required
+@encargado_required
+def administrar_equipos():
+    equipos = Equipo.query.all()
+    return render_template('enc_equipo_administrar.html', equipos=equipos)
+
+
+@encargado_bp.route('/equipos/registrar', methods=['GET', 'POST'])
+@login_required
+@encargado_required
+def registrar_equipo():
+    if request.method == 'POST':
+        registrar_nuevo_equipo(
+            request.form.get('nombre'),
+            request.form.get('t_min'),
+            request.form.get('t_max'),
+            current_user.id
+        )
+        return redirect(url_for('encargado.administrar_equipos'))
+    return render_template('enc_equipo_registrar.html')
+
+
+@encargado_bp.route('/equipos/cambiar_estado/<int:id>', methods=['POST'])
+@login_required
+@encargado_required
+def cambiar_estado(id):
+    
+    nuevo_estado = request.form.get('nuevo_estado') == 'True'
+    motivo = request.form.get('motivo')
+    modificar_disponibilidad(id, nuevo_estado, motivo, current_user.id)
+    return redirect(url_for('encargado.administrar_equipos'))
 
 
 
