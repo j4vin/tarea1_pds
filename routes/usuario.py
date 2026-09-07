@@ -44,7 +44,7 @@ def solicitar():
 
     ### PASO 1: Selección de fechas
     if request.method == 'GET' and not request.args.get('fecha_inicio'):
-        fecha_min = hoy + timedelta(days=2)
+        fecha_min = hoy + timedelta(days=1)
         fecha_max = hoy + timedelta(days=7)
         return render_template('solicitar.html', paso=1, fecha_min=fecha_min, fecha_max=fecha_max)
 
@@ -97,7 +97,7 @@ def historial():
 @login_required
 def cancelar(id):
     from .logic_historial import procesar_cancelacion
-    motivo = request.form.get('motivo_cancelacion') # Capturamos el motivo del HTML
+    motivo = request.form.get('motivo_cancelacion')
     if motivo:
         procesar_cancelacion(id, current_user.id, motivo)
     else:
