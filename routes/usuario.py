@@ -3,8 +3,8 @@ from flask import Blueprint, render_template, request, redirect, url_for
 from flask_login import current_user, login_required
 from datetime import date, timedelta, datetime
 
-from logic_formulario import contar_equipos_activos_usuario, obtener_equipos_disponibles, guardar_nueva_solicitud
-from logic_historial import obtener_historial_ordenado
+from .logic_formulario import contar_equipos_activos_usuario, obtener_equipos_disponibles, guardar_nueva_solicitud
+from .logic_historial import obtener_historial_ordenado
 
 
 usuario_bp = Blueprint('usuario', __name__, url_prefix='/Usuario')
@@ -75,7 +75,7 @@ def historial():
 @usuario_bp.route('/cancelar/<int:id>', methods=['POST'])
 @login_required
 def cancelar(id):
-    from logic_historial import procesar_cancelacion
+    from .logic_historial import procesar_cancelacion
     motivo = request.form.get('motivo_cancelacion') # Capturamos el motivo del HTML
     if motivo:
         procesar_cancelacion(id, current_user.id, motivo)
